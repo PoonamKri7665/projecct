@@ -9,7 +9,9 @@ services:
           ipv4_address: 172.18.1.2
     ports:
       - "1122:80"
-    
+    depends_on:
+      - database
+
 
   database:
     build:
@@ -21,13 +23,16 @@ services:
     ports:
       - "3306:3306"
     environment:
-      USER: jaya
-      PASSWORD: 123
-      PASS: pass
+      username: jaya
+      password: 123
+    tty: true
+    stdin_open: true
 networks:
   my_net:
     driver: bridge
-    ipam:     
+    ipam:
       config:
-        - subnet: 172.18.1.0/24      
+        - subnet: 172.18.1.0/24
 
+
+       
