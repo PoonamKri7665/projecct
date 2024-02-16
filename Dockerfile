@@ -1,7 +1,6 @@
 FROM ubuntu
 
 LABEL maintainer="jaya"
-
 # Install packages: mysql adds a root user with no password
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
@@ -15,8 +14,6 @@ RUN sed -i -e "s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mys
 # Setup our username
 ENV USER=jaya
 ENV PASSWORD=123
-ENV PASS=pass
-
 # Copy MySQL initialization script
 COPY mysql.sh /mysql.sh
 RUN chmod +x /mysql.sh
