@@ -1,4 +1,5 @@
 # projecct
+This a simple login and registration page that will store the user's data into MySQL database
 # install the prerequisite
 ```
 sudo apt update
