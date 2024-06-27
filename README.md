@@ -1,4 +1,4 @@
-# project
+# virtual hosting project /in web directory folder data used 
 This a simple login and registration page that will store the user's data in the MySQL database and script to store data on AWS s3
 # install the prerequisite
 ```
