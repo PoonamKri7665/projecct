@@ -8,7 +8,7 @@ RUN apt-get install php -y
 RUN apt-get install php-mysql -y
 WORKDIR /var/www/html
 RUN rm index.html
-ADD . .
+COPY . .
 RUN rm Dockerfile
 RUN chown www-data:www-data . -R
 CMD ["apache2ctl", "-D" , "FOREGROUND"]
