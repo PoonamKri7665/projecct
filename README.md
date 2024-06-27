@@ -61,6 +61,7 @@ find $BACKUP_DIR -type f -mtime +7 -name "*.sql" -exec rm {} \;
 
 ```
 # Detail descriptions of tag used in MySQL dump command
+```
 --no-create-info:  It will dump only the data, not the table structure.
 --skip-comments: This option omits comments from the dump file.
 --no-tablespaces: This option disables the creation of CREATE TABLESPACE and ALTER TABLE ... IMPORT TABLESPACE statements. 
@@ -68,6 +69,7 @@ find $BACKUP_DIR -type f -mtime +7 -name "*.sql" -exec rm {} \;
 --compact: This option reduces the output, eliminating unnecessary whitespace and comments, making the dump file smaller.
 --complete-insert: This option uses complete INSERT statements with column names. This makes the dump file more robust in case the table structure changes.
 --extended-insert=FALSE: This option disables extended inserts. Without this, multiple rows are inserted using a single INSERT statement, which makes the dump file more compact but harder to read. Setting it to FALSE means each row will have its own INSERT statement.
+```
 # to automate the backup 
 sudo crontab -e 
 ```
